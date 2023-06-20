@@ -1,0 +1,423 @@
+@import "./mq";
+
+.avatar-border{
+  border: 3px solid #A8CC38;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, td {
+  border: none;
+}
+
+.ck-file-dialog-button{
+  display: none !important;
+}
+
+.ckeditor-content{
+  border-left: 1px solid grey !important;
+  border-bottom: 1px solid grey !important;
+  border-right: 1px solid grey !important;
+}
+
+.card{
+    // padding: 1.5em .5em .5em;
+    border-radius: 1.5em;
+    // box-shadow: 0 5px 10px rgba(0,0,0,.2);
+
+    
+}
+
+.text{
+    font-weight: bold;
+}
+.borderless td, .borderless th {
+    border: none;
+}
+
+.w-100{
+    width: 100%;
+  }
+  
+  .w-90{
+    width: 90%;
+  }
+  
+  .w-80{
+    width: 80%;
+  }
+  
+  .w-70{
+    width: 80%;
+  }
+  
+  .w-60{
+    width: 60%;
+  }
+  .w-50{
+    width: 50%;
+  }
+  .w-40{
+    width: 40%;
+  }
+  .w-30{
+    width: 30%;
+  }
+
+  .assessment-dialog{
+    overflow-y:unset !important;
+    box-shadow:unset !important;
+    .dialog-global{
+      width: 40%;
+      @include phone{
+        width: 100%;
+      }
+      @include phone-tablet{
+        width: 70%;
+      }
+      @include portrait-tablet{
+        width: 70%;
+      }
+  
+      .fp-inner-container{
+        width: 90%;
+        @include phone{
+          width: 100%;
+        }
+      }
+    } 
+
+  }
+
+  .main-container {
+    width: 60%;
+    @include phone {
+        width: 100%;
+    }
+    @include portrait-tablet {
+        width: 100%;
+    }
+    @include tablet-2 {
+        width: 80%;
+    }
+}
+
+.news-section{
+    
+  h1{
+      width: 90%;
+      font-weight: 400;
+      font-size: 3rem;
+      @include phone {
+          width: 90%;
+          font-size: 1.5rem;
+      }
+      @include         portrait-tablet {
+          width: 90%;
+          font-size: 1.5rem;
+      }
+  }
+
+  h3{
+      font-family: Cormorant,Georgia,serif;
+  }
+
+  .v-btn{
+      font-weight: bold !important;
+  }
+
+  .news-image{
+      height: 200px;
+  }
+
+  .news-image-big{
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+      display: inline-block;
+      
+  }
+
+  .news-image-small{
+      width: 20%;
+      height: 30%;
+  }
+
+  
+
+  .news-column{
+      @include phone {
+          margin: 0px !important;
+          width: 100% !important;
+      }
+      @include         portrait-tablet {
+          margin: 0px !important;
+          width: 100% !important;
+      }
+  }
+
+  .news-card{
+      // font-family: "Cormorant", Georgia, serif;
+      width: 100%;
+      border: solid 2px #ffe100 !important;
+      
+      .col{
+          padding: 0px !important;
+      }
+  
+      .card-title{
+          font-size: 1.5rem;
+          font-weight: bold;
+          text-transform: none !important;
+          line-height: normal !important;
+          word-break: normal !important;
+          @include phone {
+              margin-bottom: 0px;
+          }
+          @include         portrait-tablet {
+              margin-bottom: 0px;
+          }
+      }
+
+      .card-inner{
+          margin-top: 1%;
+
+          @include phone {
+              margin-top: 0%;
+          }
+          @include         portrait-tablet {
+              margin-top: 0%;
+          }
+      }
+
+      .document-title{
+          font-weight: bold;
+          color: #666;
+      }
+  
+      .card-subtitle{
+          font-size: 1rem;
+          font-style: italic;
+          padding-bottom: 0px !important;
+      }
+  
+      .open-button{
+          text-transform: none !important;
+      }
+
+      .card-content{
+        font-size: 1rem;
+        font-weight: bold;
+          width: 100%;
+      }
+  }
+
+  .news-card-newest {
+      width: 100%;
+      border: solid 2px #ffee00 !important;
+      
+      .col{
+          padding: 0px !important;
+      }
+  
+      .card-title{
+          font-size: 2rem;
+          font-weight: bold;
+          text-transform: none !important;
+          line-height: normal !important;
+          word-break: normal !important;
+          @include phone {
+              margin-bottom: 0px;
+          }
+          @include         portrait-tablet {
+              margin-bottom: 0px;
+          }
+      }
+
+      .card-inner{
+          margin-top: 1%;
+
+          @include phone {
+              margin-top: 0%;
+          }
+          @include         portrait-tablet {
+              margin-top: 0%;
+          }
+      }
+
+      .document-title{
+          font-weight: bold;
+          color: #666;
+      }
+  
+      .card-subtitle{
+          font-size: 1.5rem;
+          font-style: italic;
+          padding-bottom: 0px !important;
+      }
+  
+      .open-button{
+          text-transform: none !important;
+      }
+
+      .card-content{
+          width: 100%;
+      }
+  }
+}
+
+.label-container{
+  // font-family: Montserrat,Helvetica,serif;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: Montserrat,Helvetica,serif;
+  .label-inner{
+      flex-direction: row !important;
+      @include phone {
+          flex-direction: column !important;
+      }
+      @include portrait-tablet {
+          flex-direction: column !important;
+      }
+  }
+
+  .caption{
+      margin-right: 8px;
+      @include phone {
+          margin-right: 0px;
+          margin-top: 8px;
+      }
+      @include portrait-tablet {
+          margin-right: 0px;
+          margin-top: 8px;
+      }
+  }
+  .card-content{
+    font-size: 1rem;
+    
+      width: 100%;
+  }
+  
+}
+
+.body-section{
+padding: 120px 0;
+  position: relative;
+  h1{
+      width: 90%;
+      font-weight: 400;
+      font-size: 2.8rem;
+      @include phone {
+          width: 90%;
+          font-size: 1.5rem;
+      }
+      @include         portrait-tablet {
+          width: 90%;
+          font-size: 1.5rem;
+      }
+  }
+
+  h3{
+      font-family: Cormorant,Georgia,serif;
+  }
+
+  .body-image-big{
+      height: auto;
+      width: auto;
+  }
+
+  .body-image{
+      max-width: 100%;
+      vertical-align: middle;
+      height: 100%;
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      
+  }
+  
+  .card-container{
+      width: 90%;
+      
+  }
+
+  .body-card{
+      // font-family: "Cormorant", Georgia, serif;
+      width: 100%;
+
+      
+      .col{
+          padding: 0px !important;
+      }
+  
+      .card-title{
+          font-size: 1.5rem;
+          font-family: Cinzel,Verdana,serif;
+          font-weight: bold;
+          text-transform: none !important;
+          line-height: normal !important;
+          word-break: normal !important;
+          @include phone {
+              margin-bottom: 0px;
+          }
+          @include         portrait-tablet {
+              margin-bottom: 0px;
+          }
+      }
+
+      .card-inner{
+          margin-top: 1%;
+
+          @include phone {
+              margin-top: 0%;
+          }
+          @include         portrait-tablet {
+              margin-top: 0%;
+          }
+      }
+
+  
+      .card-subtitle{
+          font-size: 1rem;
+          font-style: italic;
+          padding-bottom: 0px !important;
+      }
+
+      .card-text{
+          font-size: 1.2rem;
+          padding-bottom: 0px !important;
+
+          h1{
+              width: 90%;
+              font-weight: 400;
+              font-size: 1.8rem;
+              font-weight: bold;
+              @include phone {
+                  width: 90%;
+                  font-size: 1.5rem;
+              }
+              @include         portrait-tablet {
+                  width: 90%;
+                  font-size: 1.5rem;
+              }
+          }
+      }
+  
+      .open-button{
+          text-transform: none !important;
+      }
+
+      .card-content{
+          width: 100%;
+      }
+  }
+
+  
+}
+
+.card:hover{
+    transform: scale(1.05);
+ box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}

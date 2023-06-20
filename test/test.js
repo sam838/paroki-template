@@ -1,0 +1,20 @@
+const { Builder, By, Keys } = require('selenium-webdriver')
+const env = require('dotenv').config()
+const axios = require('axios')
+const driver = new Builder()
+  .forBrowser('firefox').build()
+describe('Register Testing', function () {
+  beforeAll(function (done) {
+    driver.get('localhost:8888')
+    done()
+  })
+  it('should login', function (done) {
+    driver.get('localhost:8888/login')
+    driver.findElement(By.id('input-31')).sendKeys(process.env.email)
+    driver.sleep(2000)
+    driver.findElement(By.id('input-34')).sendKeys(process.env.password)
+    driver.sleep(2000)
+    driver.findElement(By.className('ml-auto my-10')).click()
+    done()
+  })
+})
