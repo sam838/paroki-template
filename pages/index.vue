@@ -1,5 +1,5 @@
 <template>
-  <Home />
+  <DefaultComponentsHome />
 </template>
 <script>
 export default {

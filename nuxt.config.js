@@ -22,6 +22,7 @@ async function getPayload (url, callback) {
       Partner: process.env.PARTNER
     }
   }).then((res) => {
+    console.log(res)
     return res.data
   }).catch(callback)
 }
@@ -29,29 +30,29 @@ async function getPayload (url, callback) {
 const setting = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s | Paroki Kristus Raja Ngrambe',
-    title: 'Paroki Kristus Raja Ngrambe',
+    titleTemplate: `%s | ${process.env.parokiName}`,
+    title: `${process.env.parokiName}`,
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
-      { hid: 'description', name: 'description', content: 'Paroki Kristus Raja Ngrambe' },
+      { hid: 'description', name: 'description', content: `${process.env.parokiName}` },
       {
         hid: 'description',
         name: 'description',
-        content: 'Paroki Kristus Raja Ngrambe'
+        content: `${process.env.parokiName}`
       },
       {
         hid: 'og:description',
         name: 'og:description',
-        content: 'Paroki Kristus Raja Ngrambe'
+        content: `${process.env.parokiName}`
       },
       {
         hid: 'og:title',
         name: 'og:title',
-        content: 'Paroki Kristus Raja Ngrambe'
+        content: `${process.env.parokiName}`
       },
       {
         hid: 'og:image',
@@ -165,6 +166,9 @@ const setting = {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ['vuetify/lib', 'tiptap-vuetify']
+  },
+  env: {
+    parokiName: process.env.parokiName
   },
   target: 'static',
   generate: {

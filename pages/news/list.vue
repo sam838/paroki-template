@@ -1,51 +1,11 @@
 <template>
-  <div>
-    <section class="inner-banner ">
-      <div class="container-2">
-        <h2 class="inner-banner__title">
-          WARTA PAROKI KRISTUS RAJA NGRAMBE
-        </h2>
-        <!-- /.inner-banner__title -->
-      </div>
-      <!-- /.container -->
-    </section>
-   <section class="blog-one blog-page">
-      <div class="container-2">
-        <div class="row">
-          <div
-            class="col-lg-4"
-            v-for="(item,i) in dataList"
-            :key="i"
-            >
-            <NewsList
-              :item="item"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- <section class="blog-one blog-page mx-auto">
-      <div class="d-flex flex-column mr-md-5 ml-md-5">
-        <div class="d-flex justify-space-between">
-          <v-col
-            v-for="(item, i) in newsContent"
-            :key="i"
-          >
-            <News
-              :item="item"
-              class="dflex mx-auto"
-            />
-          </v-col>
-        </div>
-      </div>
-    </section> -->
-  </div>
+  <DefaultComponentsNewsList key="data" :data-list="list" />
 </template>
 
 <script>
 export default {
   data: () => ({
-    dataList: []
+    list: []
   }),
   async fetch () {
     let payload = this.$nuxt.context.payload
@@ -54,7 +14,7 @@ export default {
         type: 'news'
       })
     }
-    this.dataList = payload
+    this.list = payload
   },
   methods: {
     strippedContent (string) {
