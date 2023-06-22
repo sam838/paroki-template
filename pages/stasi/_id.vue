@@ -346,8 +346,6 @@
         {{ detailContent.content }}
       </div>
     </section> -->
-
-  </div>
   </div>
 </template>
 <script>

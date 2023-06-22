@@ -6,7 +6,7 @@
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="logo-box clearfix">
             <a class="navbar-brand" href="/">
-              <img src="/assets/images/logo-ngrambe.png" class="main-logo" width="100" alt="Awesome Image">
+              <img :src="parokiDetail.logo" class="main-logo" width="100" alt="Awesome Image">
             </a>
             <div class="header__social">
               <a href="https://id-id.facebook.com/pages/category/Community/GEREJA-KATOLIK-KRISTUS-RAJA-NGRAMBE-293767663988876/"><i class="fab fa-facebook-square" /></a>
@@ -84,6 +84,11 @@
 <script>
 export default {
   name: 'NavOne',
+  computed: {
+    parokiDetail () {
+      return this.$store.state.thisParoki.detail
+    }
+  },
   mounted () {
     if ($('.main-navigation .navigation-box').length) {
       const subMenu = $('.main-navigation .sub-menu')

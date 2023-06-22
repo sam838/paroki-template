@@ -22,7 +22,6 @@ async function getPayload (url, callback) {
       Partner: process.env.PARTNER
     }
   }).then((res) => {
-    console.log(res)
     return res.data
   }).catch(callback)
 }
@@ -70,6 +69,48 @@ const setting = {
       //   content: 'https://doctrina.imavi.org/'
       // }
     ],
+    async asyncData () {
+      // Fetch SEO metadata from API
+      let imaviUrl = 'http://localhost:3005/imavi/'
+      if (useLocal === 'false') {
+        imaviUrl = 'https://api.imavi.org/imavi/'
+      }
+      const data = await getPayload(imaviUrl + 'parokis/view/' + process.env.parokiId)
+      return {
+        title: 'Gereja Katolik ' + data.name,
+        meta: [
+          { charset: 'utf-8' },
+          { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
+          { hid: 'description', name: 'description', content: `${data.description}` },
+          {
+            hid: 'description',
+            name: 'description',
+            content: `${data.description}`
+          },
+          {
+            hid: 'og:description',
+            name: 'og:description',
+            content: `${data.description}`
+          },
+          {
+            hid: 'og:title',
+            name: 'og:title',
+            content: `Gereja Katolik ${data.name}`
+          },
+          {
+            hid: 'og:image',
+            name: 'og:image',
+            content: `${data.logo}`
+          },
+          {
+            hid: 'image',
+            name: 'image',
+            content: `${data.logo}`
+          }
+          // Add more dynamic meta tags as needed
+        ]
+      }
+    },
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,500i,600,700,800%7CSatisfy&display=swap' },
@@ -179,7 +220,15 @@ const setting = {
       }
       const allNews = await getPayload(imaviUrl + 'news/get-all', callback)
       const allArticles = await getPayload(imaviUrl + 'articles/get-all', callback)
-
+      const thisParoki = await getPayload(imaviUrl + 'parokis/view/' + process.env.parokiId, callback)
+      const featuredArticles = await getPayload(
+        imaviUrl + 'articles/featured',
+        callback
+      )
+      const featuredNews = await getPayload(
+        imaviUrl + 'news/featured',
+        callback
+      )
       const routeList = [
         {
           route: '/news/list',
@@ -188,7 +237,20 @@ const setting = {
         {
           route: '/articles/list',
           payload: allArticles
+        },
+        {
+          route: '/',
+          payload: {
+            thisParoki,
+            featuredArticles,
+            featuredNews
+          }
+        },
+        {
+          route: '/about',
+          payload: thisParoki
         }
+
       ]
 
       allNews.forEach((element) => {

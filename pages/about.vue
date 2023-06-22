@@ -156,3 +156,23 @@
     </section>
   </div>
 </template>
+<script>
+export default {
+  data: () => ({
+    parokiDetail: []
+  }),
+  async fetch () {
+    let payload = this.$nuxt.context.payload
+    if (!payload) {
+      payload = await this.$axios.$post(
+        '/.netlify/functions/imavi-detail',
+        {
+          type: 'parokis',
+          code: process.env.parokiId
+        }
+      )
+    }
+    this.parokiDetail = payload
+  }
+}
+</script>
