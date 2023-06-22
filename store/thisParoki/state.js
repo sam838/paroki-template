@@ -20,6 +20,7 @@ export default () => ({
     secretariatTelephone: '',
     villages: '',
     website: '-',
-    whatsapp: '-'
+    whatsapp: '-',
+    socialLinks: []
   }
 })

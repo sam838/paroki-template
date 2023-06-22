@@ -9,8 +9,8 @@
               <img :src="parokiDetail.logo" class="main-logo" width="100" alt="Awesome Image">
             </a>
             <div class="header__social">
-              <a href="https://id-id.facebook.com/pages/category/Community/GEREJA-KATOLIK-KRISTUS-RAJA-NGRAMBE-293767663988876/"><i class="fab fa-facebook-square" /></a>
-              <a href="https://www.youtube.com/channel/UCNvTbTtaERT4T6F3gDNCdrg"><i class="fab fa-youtube" /></a>
+              <a :href="fb.url"><i class="fab fa-facebook-square" /></a>
+              <a :href="youtube.url"><i class="fab fa-youtube" /></a>
               <!-- <a href="#"><i class="fab fa-instagram" /></a> -->
             </div><!-- /.header__social -->
             <button class="menu-toggler" data-target=".main-navigation">
@@ -51,12 +51,12 @@
                   <nuxt-link to="/about" class="dropdown-item">
                     Profil
                   </nuxt-link>
-                  <nuxt-link to="/sejarah" class="dropdown-item">
+                  <!-- <nuxt-link to="/sejarah" class="dropdown-item">
                     Sejarah
                   </nuxt-link>
                   <nuxt-link to="/stasi/list" class="dropdown-item">
                     Daftar Stasi
-                  </nuxt-link>
+                  </nuxt-link> -->
                 </div>
               </li>
             </ul>
@@ -87,6 +87,12 @@ export default {
   computed: {
     parokiDetail () {
       return this.$store.state.thisParoki.detail
+    },
+    fb () {
+      return this.$store.state.thisParoki.detail.socialLinks.find(element => element.type === 'Fb')
+    },
+    youtube () {
+      return this.$store.state.thisParoki.detail.socialLinks.find(element => element.type === 'Youtube')
     }
   },
   mounted () {
