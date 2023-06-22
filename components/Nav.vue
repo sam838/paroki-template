@@ -6,11 +6,11 @@
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="logo-box clearfix">
             <a class="navbar-brand" href="/">
-              <img :src="parokiDetail.logo" class="main-logo" width="100" alt="Awesome Image">
+              <img :src="require('~/assets/img/logo.png')" class="main-logo" width="100" alt="Awesome Image">
             </a>
             <div class="header__social">
-              <a :href="fb.url"><i class="fab fa-facebook-square" /></a>
-              <a :href="youtube.url"><i class="fab fa-youtube" /></a>
+              <!-- <a :href="fb.url"><i class="fab fa-facebook-square" /></a>
+              <a :href="youtube.url"><i class="fab fa-youtube" /></a> -->
               <!-- <a href="#"><i class="fab fa-instagram" /></a> -->
             </div><!-- /.header__social -->
             <button class="menu-toggler" data-target=".main-navigation">
@@ -84,16 +84,25 @@
 <script>
 export default {
   name: 'NavOne',
-  computed: {
-    parokiDetail () {
-      return this.$store.state.thisParoki.detail
-    },
-    fb () {
-      return this.$store.state.thisParoki.detail.socialLinks.find(element => element.type === 'Fb')
-    },
-    youtube () {
-      return this.$store.state.thisParoki.detail.socialLinks.find(element => element.type === 'Youtube')
+  props:
+  {
+    parokiDetail: {
+      type: Object,
+      default () {
+        return {}
+      }
     }
+  },
+  computed: {
+    // parokiDetail () {
+    //   return this.$store.state.thisParoki.detail
+    // },
+    // fb () {
+    //   return this.$store.state.thisParoki.detail.socialLinks.find(element => element.type === 'Fb')
+    // },
+    // youtube () {
+    //   return this.$store.state.thisParoki.detail.socialLinks.find(element => element.type === 'Youtube')
+    // }
   },
   mounted () {
     if ($('.main-navigation .navigation-box').length) {

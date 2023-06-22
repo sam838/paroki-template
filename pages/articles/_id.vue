@@ -7,9 +7,9 @@
 <script>
 export default {
   data: () => ({
-    type: 'articles',
     pageData: {},
-    defaultThumbnail: require('@/assets/img/ngrambe.png')
+    type: 'articles',
+    defaultThumbnail: require('@/assets/img/logo.png')
   }),
   async fetch () {
     let payload = this.$nuxt.context.payload

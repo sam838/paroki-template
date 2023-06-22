@@ -9,7 +9,7 @@ export default {
   data: () => ({
     pageData: {},
     type: 'news',
-    defaultThumbnail: require('@/assets/img/ngrambe.png')
+    defaultThumbnail: require('@/assets/img/logo.png')
   }),
   async fetch () {
     let payload = this.$nuxt.context.payload

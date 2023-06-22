@@ -1,6 +1,6 @@
 <template>
   <div class="page-wrapper">
-    <Nav />
+    <Nav :paroki-detail="thisParoki" />
     <nuxt />
     <Footer />
   </div>
@@ -41,6 +41,7 @@ export default {
             code: process.env.parokiId
           }
         )
+        this.thisParoki = thisParoki
         this.$store.commit('thisParoki/setParokis', thisParoki)
       } catch (error) {
         console.log(error)

@@ -40,7 +40,7 @@ export default {
     }
   },
   data: () => ({
-    defaultThumbnail: require('@/assets/img/ngrambe.png')
+    defaultThumbnail: require('@/assets/img/logo.png')
   })
 }
 </script>

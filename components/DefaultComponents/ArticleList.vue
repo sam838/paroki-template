@@ -25,20 +25,19 @@
         </div>
       </div>
     </section>
-      <div class="d-flex flex-column mr-md-5 ml-md-5">
-        <div class="d-flex justify-space-between">
-          <v-col
-            v-for="(item, i) in dataList"
-            :key="i"
-          >
-            <IndexCard2
-              :item="item"
-              class="dflex mx-auto"
-            />
-          </v-col>
-        </div>
+    <div class="d-flex flex-column mr-md-5 ml-md-5">
+      <div class="d-flex justify-space-between">
+        <v-col
+          v-for="(item, i) in dataList"
+          :key="i"
+        >
+          <IndexCard2
+            :item="item"
+            class="dflex mx-auto"
+          />
+        </v-col>
       </div>
-    </section> -->
+    </div>
   </div>
 </template>
 
