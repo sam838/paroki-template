@@ -19,7 +19,7 @@
         <div class="about-one__img">
           <div class="row">
             <div class="col">
-              <img src="/assets/images/gerejangrambe.jpg" alt="" width="70%">
+              <img :src="parokiDetail.images[0]" alt="" width="70%">
             </div>
             <!-- /.col-lg-6 -->
           </div>

@@ -17,7 +17,7 @@
         <div class="col-xl-6 d-flex justify-content-xl-end justify-content-sm-center">
           <div class="">
             <span class="about-two__image-dots" /><!-- /.about-two__image-dots -->
-            <img :src="thisParoki.logo" alt="" style="max-width:500px">
+            <img :src="thisParoki.images[0]" alt="" style="max-width:500px">
           </div><!-- /.about-two__image -->
         </div><!-- /.col-lg-6 -->
       </div><!-- /.row -->
